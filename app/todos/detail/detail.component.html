@@ -1,0 +1,21 @@
+
+
+<div *ngIf="todoService.selectedTodo">
+
+    <h2>Todo - {{ todoService.selectedTodo.id ? 'detail' : 'new' }}</h2>
+
+    <form (submit)="create(todoService.selectedTodo)">
+        <input class="form-control" [value]="todoService.selectedTodo.id" disabled/>
+        <input class="form-control" [(ngModel)]="todoService.selectedTodo.title" placeholder="Title" />
+        <input class="form-control" type="number" min="1" [(ngModel)]="todoService.selectedTodo.order" placeholder="Order" />
+
+        <button type="button" class="btn btn-default" (click)="cancel()" >Close</button>
+        <button type="submit" class="btn btn-primary" *ngIf="!todoService.selectedTodo.id">Save</button>
+        <button type="button" class="btn btn-danger" (click)="delete(todoService.selectedTodo)" *ngIf="todoService.selectedTodo.id">Delete</button>
+    </form>
+
+</div>
+
+<div *ngIf="!todoService.selectedTodo">
+    Please select a todo on the left
+</div>

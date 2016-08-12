@@ -1,0 +1,10 @@
+<h2> Todolist ( {{ todoService.todoList.length }} )
+    <button type="button" class="btn btn-primary" (click)="create()">New</button>
+</h2>
+
+<div class="list-group">
+    <a href="#" *ngFor="let todo of todos" class="list-group-item" (click)="detail(todo)">
+        {{todo.id}} - {{ todo.title }}
+        <span class="tag tag-default tag-pill pull-xs-right" *ngIf="todo.order">{{ todo.order }}</span>
+    </a>
+</div>
