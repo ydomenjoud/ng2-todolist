@@ -51,7 +51,7 @@ export class TodoService {
                 break;
             }
         }
-        this.selectedTodo = null;
+        this.selectedTodo = {id: 0,title:"", order: 1};
     }
 
     /**

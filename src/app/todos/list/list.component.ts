@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
      * create a new todo
      */
     create(){
-        let todo:Todo = {id: 0,title:"", order: 2};
+        let todo:Todo = {id: 0,title:"", order: 1};
         this.todoService.selectedTodo = todo;
     }
 
